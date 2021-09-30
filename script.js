@@ -50,7 +50,7 @@ window.onload = function(){
             ctx.fillRect(rastroCobra[i].x*tamanhoQuadrados ,rastroCobra[i].y*tamanhoQuadrados, tamanhoQuadrados,tamanhoQuadrados);
             if (rastroCobra[i].x == pontoX && rastroCobra[i].y == pontoY){
                 velocidadeX = velocidadeY = 0;
-                rastroAnterior = 3;
+                rastroAnterior = 1;
             }
         }
         rastroCobra.push({x:pontoX, y:pontoY });
