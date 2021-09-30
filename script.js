@@ -1,5 +1,4 @@
 window.onload = function(){
-
     let stage = document.getElementById('stage');
     let ctx = stage.getContext('2d'); // parte visual
     document.addEventListener("keydown", keyPush);
@@ -45,9 +44,9 @@ window.onload = function(){
         ctx.fillRect(comidaPontoX*tamanhoQuadrados, comidaPontoY*tamanhoQuadrados,tamanhoQuadrados,tamanhoQuadrados);
 
 
-        // Cor e tamanho da cauda da cobrinha
-        var img = document.getElementById("img");
-        var cobra = ctx.createPattern(img, "repeat");
+        // Cor e tamanho da cauda da cobrinha -- para imagem
+        let img = document.getElementById("img");
+        let cobra = ctx.createPattern(img, "repeat");
         ctx.fillStyle = cobra;
 
         for (let i = 0; i < rastroCobra.length; i++){
@@ -72,6 +71,8 @@ window.onload = function(){
         }
     }
 function keyPush(event){
+
+    //CONDIÇÃO DE MOVIMENTO DAS SETAS
 
     switch (event.keyCode) {
         case 37: //left
