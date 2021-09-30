@@ -10,11 +10,12 @@ window.onload = function(){
     let velocidadeX = velocidadeY = 0; // velocidades iguais a 0
     let pontoX = 10; // iniciar nos pontos 10 do grafico X - abscissas
     let pontoY = 15; // iniciar nos pontos 15 do gráfico Y - ordenadas
-    let tamanhoQuadrados = 10; // ele terá 10px de tamanho cada quadradinho (assim toda vez que eu andar, andarei 10px não importa o lado)
+    let tamanhoQuadrados = 10; // ele terá 10 de tamanho cada quadradinho (assim toda vez que eu andar, andarei 10px não importa o lado)
     let quantidadeDeQuadrados = 50; // Quantidade de quadrados de 10px que terá no jogo
     let comidaPontoX = 10;
     let comidaPontoY = 10; // É onde está a maca
-    
+
+
     let rastroCobra = [];
     rastroAnterior = 5; // tamanho inicial do rabo da cobra
 
@@ -45,7 +46,10 @@ window.onload = function(){
 
 
         // Cor e tamanho da cauda da cobrinha
-        ctx.fillStyle = 'white'
+        var img = document.getElementById("img");
+        var cobra = ctx.createPattern(img, "repeat");
+        ctx.fillStyle = cobra;
+
         for (let i = 0; i < rastroCobra.length; i++){
             ctx.fillRect(rastroCobra[i].x*tamanhoQuadrados ,rastroCobra[i].y*tamanhoQuadrados, tamanhoQuadrados,tamanhoQuadrados);
             if (rastroCobra[i].x == pontoX && rastroCobra[i].y == pontoY){
